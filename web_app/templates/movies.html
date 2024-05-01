@@ -1,0 +1,27 @@
+{% extends "bootstrap_5_layout.html" %}
+{% set page_title = "movies Page" %}
+{% set active_page = "movies" %}
+
+{% block content %}
+
+    <h1>movies</h1>
+
+    <p class="lead">This is the movies page</p>
+
+    {% if movies|length > 0 %}
+
+        <!--div class="container"-->
+        <ol>
+            {% for movie in movies %}
+                <li>{{ movie.title }} | {{ movie.director }}</li>
+            {% endfor %}
+        </ol>
+        <!--/div-->
+
+    {% else %}
+
+        <p>Oops, no movies found.</p>
+
+    {% endif %}
+
+{% endblock %}
